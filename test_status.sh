@@ -1,13 +1,14 @@
 $!/bin/bash
 
-myvar=""
-
 if [ -z "$1" ]; then
+  echo "you didnt provide an argument"
   exit 0;
 fi
-varname=$(systemctl status $1 | grep Active | awk '{print $2}')
-varname2="inactive"
+status=$(systemctl status $1 | grep Active | awk '{print $2}')
+inactive="inactive"
 
-if [ $varname == $varname2 ]; then
+if [ $status == inactive ]; then
   echo "noooooo it is off"
+else
+  echo "My status is $status"
 fi
