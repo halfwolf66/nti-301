@@ -1,8 +1,8 @@
 #!/bin/bash
  
  yum -y install python-pip
-      pip install virtualenv
-      pip install --upgrade pip
+     pip install virtualenv
+     pip install --upgrade pip
      mkdir ~/newproject
      cd ~/newproject
      virtualenv newenv
