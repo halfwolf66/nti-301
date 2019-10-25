@@ -1,0 +1,32 @@
+ 1  sudo yum install python-pip
+    8  pip install virtualenv
+    9  pip install --upgrade pip
+   10  history
+   11  mkdir ~/newproject
+   12  cd ~/newproject
+   13  virtualenv newenv
+   14  source newenv/bin/activate
+   15  pip install django
+   16  django admin version
+   17  django-admin version
+   18  source newenv/bin/activate
+   19  cd ~/newproject
+   20  source newenv/bin/activate
+   21  django-admin startproject newproject
+   22  ls-l
+   23  ls -l
+   24  cd newproject
+   25  yum install-tree
+   26  tree newproject
+   27  yum install tree
+   28  tree newproject
+   29  django-admin startproject newproject
+   30  cd newproject
+   31  django-admin startproject newproject
+   32  python manage.py migrate
+   33  ls -l
+   34  cd newproject
+   35  python manage.py migrate
+   36  python manage.py createsuperuser
+   37  python manage.py runserver 0.0.0.0:8000
+   38  history
