@@ -11,6 +11,12 @@ compute = discovery.build('compute', 'v1', credentials=credentials)
 project = 'NTI-300'
 zone = 'us-central1-a'
 name = 'djangofinal'
+def local_repo():
+	repo="[local-epel]
+name=NTI 300 EPEL
+baseurl=http://34.70.236.40/epel/
+gpgcheck=0
+enabled=1
 
 def list_instances(compute, project, zone):
 	result = compute.instances().list(project=project, zone=zone).execute()
