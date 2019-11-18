@@ -11,12 +11,29 @@ compute = discovery.build('compute', 'v1', credentials=credentials)
 project = 'NTI-300'
 zone = 'us-central1-a'
 name = 'djangofinal'
+
 def local_repo():
-	repo="[local-epel]
-name=NTI 300 EPEL
+    repo="""[local-epel]
+name=NTI300 EPEL
 baseurl=http://34.70.236.40/epel/
 gpgcheck=0
-enabled=1
+enabled=1"""
+    print(repo)
+    with open("/etc/yum.repos.d/local-repo.repo","w+") as f:
+      f.write(repo)
+    f.close()
+        
+    on="enabled=1"
+    off="enabled=0"
+
+    with open('/etc/yum.repos.d/epel.repo') as f:
+      dissablerepo=f.read().replace(on, off)
+    f.close()
+
+    with open('/etc/yum.repos.d/epel.repo', "w") as f:
+      f.write(dissablerepo)
+    f.close()
+
 
 def list_instances(compute, project, zone):
 	result = compute.instances().list(project=project, zone=zone).execute()
@@ -97,3 +114,6 @@ instances = list_instances(compute, project, zone)
 
 pprint.pprint(newinstance)
 pprint.pprint(instances)
+
+
+local_repo()
