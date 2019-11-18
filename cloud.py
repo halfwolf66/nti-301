@@ -33,7 +33,8 @@ enabled=1"""
     with open('/etc/yum.repos.d/epel.repo', "w") as f:
       f.write(dissablerepo)
     f.close()
-
+local_repo()
+	
 
 def list_instances(compute, project, zone):
 	result = compute.instances().list(project=project, zone=zone).execute()
@@ -116,4 +117,4 @@ pprint.pprint(newinstance)
 pprint.pprint(instances)
 
 
-local_repo()
+
