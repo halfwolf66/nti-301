@@ -13,7 +13,7 @@ import json
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 
-project = 'loyal-karma-254202'
+project = 'mystic-stack-254202'
 zone = 'us-central1-a'
 name = 'test2'
 
