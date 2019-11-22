@@ -15,23 +15,13 @@ name=NTI300 EPEL
 baseurl=http://34.70.236.40/epel/
 gpgcheck=0
 enabled=1"""
+    os.system('for file in $( ls /etc/yum.repos.d/ ); do mv /etc/yum.repos.d/$file /etc/yum.repos.d/$file.bak; done')
     print(repo)
     with open("/etc/yum.repos.d/local-repo.repo","w+") as f:
       f.write(repo)
     f.close()
-        
-    on="enabled=1"
-    off="enabled=0"
-
-    with open('/etc/yum.repos.d/epel.repo') as f:
-      dissablerepo=f.read().replace(on, off)
-    f.close()
-
-    with open('/etc/yum.repos.d/epel.repo', "w") as f:
-      f.write(dissablerepo)
-    f.close()
 local_repo()
-	
+
 def setup_install():
     print ('********** installing pip & virtualenv so we can give django its own ver of python')    # log messaging
     os.system('yum -y install python-pip httpd mod_wsgi && pip install --upgrade pip')              # install python httpd mod_wsgi and then upgrade python to latest version
