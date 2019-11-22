@@ -13,9 +13,9 @@ import json
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 
-project = 'loyal-karma-254202'
+project = 'NTI-300'
 zone = 'us-central1-a'
-name = 'test2'
+name = 'djangofinal'
 
 def list_instances(compute, project, zone):
   result = compute.instances().list(project=project, zone=zone).execute()
