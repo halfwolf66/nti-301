@@ -57,14 +57,14 @@ def create_instance(compute, project, zone, name):
 		}],
 		
 		#Enable http/https for select instances
-		"labels": {
-		"http-server": "",
+		 "labels": {
+		 "http-server": "",
 		"https-server": ""
 		},
 		
 		"tags": {
 		"items": [
-		"http-server": ""
+		"http-server": "",
 		"https-server": ""
 		]
 		},
