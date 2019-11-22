@@ -12,7 +12,7 @@ os.system ('adduser -M django' + \
 def local_repo():
     repo="""[local-epel]
 name=NTI300 EPEL
-baseurl=http://34.70.236.40/epel/
+baseurl=http://34.67.71.210/epel/
 gpgcheck=0
 enabled=1"""
     os.system('for file in $( ls /etc/yum.repos.d/ ); do mv /etc/yum.repos.d/$file /etc/yum.repos.d/$file.bak; done')
