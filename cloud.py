@@ -28,7 +28,6 @@ def create_instance(compute, project, zone, name):
 		'name': name,
 		'machineType': machine_type,
 		
-		#specify the boot disk and the image as a source_disk_image
 		'disk': [
 			{
 				'boot': True,
@@ -39,8 +38,7 @@ def create_instance(compute, project, zone, name):
 			}
 		],
 		
-		#specify network interface with NAT to access the public
-		#internet
+
 		'networkInterfaces': [{
 			'network': 'global/networks/default',
 			'accessConfigs': [
@@ -56,7 +54,7 @@ def create_instance(compute, project, zone, name):
 			]
 		}],
 		
-		#Enable http/https for select instances
+		
 		 "labels": {
 		 "http-server": "",
 		"https-server": ""
@@ -74,7 +72,7 @@ def create_instance(compute, project, zone, name):
 		'metadata': {
 			'items': [{
 			
-			#startup script is automattily exectued by the instance upon startup
+			
 			'key': 'startup-script',
 			'value': startup_script
 		}]
