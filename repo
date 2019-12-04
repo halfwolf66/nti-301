@@ -22,7 +22,7 @@ server {
 
         location / {
                 index  index.php index.html index.htm;
-                autoindex on;   #enable listing of directory index
+                autoindex on;  
         }
     }
 
